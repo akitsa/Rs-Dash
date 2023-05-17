@@ -24,15 +24,15 @@ class newsCtrl extends Controller
     $data = [
         "title" => "Kategori News Form",
         "dtKat" => kategorinews::All(),
-        "rsNews" => news::where("id",$req->id_News)->first()
+        "rsNews" => news::where("id",$req->id_news)->first()
     ];
     return view('back/news/form',$data);
     }
 
     function save (Request $req) {
         // create or update
-
-        $req -> validate(
+        //dd($req->all());
+        $req->validate(
             [
                 "news_kd" => "required|max:5",
                 "id_kat_news" => "required",
@@ -45,16 +45,20 @@ class newsCtrl extends Controller
             ],
             [
                 "news_kd.required" => "kode news harus di isi",
-                "id_kat_news" =>  "kategori harus di pilih",
-                "title" => "judul harus di isi",
-                "tooltip" => "tooltip harus di isi",
-                "url" => "link harus di isi",
-                "desc" => "deskripsi harus di isi",
-                "status" => "status harus di pilih",
+                "news_kd.max" => "maximal 5 digit",
+                "id_kat_news.required" =>  "kategori harus di pilih",
+                "title.required" => "judul harus di isi",
+                "tooltip.required" => "tooltip harus di isi",
+                "url.required" => "link harus di isi",
+                "desc.required" => "deskripsi harus di isi",
+                "status.required" => "status harus di pilih",
+                "foto.mimes" => "Foto harus .jpg, .jpeg atau png !",
+                "foto.max" => "foto maximal 3000mb",
+
             ]
         );
 
-        // proses upload 
+        // proses upload
         if($req->file("foto")){
             $fileName = time().'.'.$req->file("foto")->extension();
             $result = $req->file("foto")->move(public_path('back/uploads/news'), $fileName);
@@ -62,13 +66,14 @@ class newsCtrl extends Controller
         } else {
             $foto = $req->input("old_foto");
         }
-
+       
         // proses simpan
 
         try {
-            news::updateorcreate(
+            //save
+            news::updateOrCreate(
                 [
-                    "id" => $req->input("id_News")
+                    "id" => $req->input("id_news")
                 ],
                 [
                     "news_kd" => $req->input("news_kd"),
@@ -78,22 +83,23 @@ class newsCtrl extends Controller
                     "url" =>$req->input("url"),
                     "desc" =>$req->input("desc"),
                     "status"=>$req->input("status"),
-                    "foto"=>$req->foto
+                    "foto"=>$foto,
                 ]
             );
             //notif
             $notif = [
                 "type" => "success",
-                "text" => "Data Berhasil Disimpan !"
+                "message" => "Data Berhasil Disimpan !"
             ];
-
-        }catch(Exception $e){
+            
+           
+        } catch(Exception $e){
             $notif = [
                 "type" => "success",
-                "text" => "Data Gagal Disimpan !".$e->getMessage()
+                "message" => "Data Gagal Disimpan !".$e->getMessage()
             ];
         }
-
+        return redirect (url("news"))->with($notif);
     }
 
     function delete($id){
@@ -107,11 +113,12 @@ class newsCtrl extends Controller
                 "type" => "success",
                 "text" => "Data Berhasil Disimpan !"
             ];
-        }catch(Exception $e){
+        }catch(Exception $e){   
             $notif = [
                 "type" => "success",
                 "text" => "Data Gagal Disimpan !".$e->getMessage()
             ];
         }
+        return redirect(url('news'))->with($notif);
     }
 }

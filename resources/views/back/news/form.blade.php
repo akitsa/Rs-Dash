@@ -10,11 +10,12 @@
         <div class="col-md-4">
             <div class="card">
                 <div class="card-body">
+
                     <div class="form-group">
                         @if(@$rsNews->foto)
-                            <img class="foto-news-big" src="{{ @$rsNews->foto }}" alt="{{ @$rsNews->title}}">
+                            <img class="thumb-menu-big" src="{{ @$rsNews->foto }}" alt="{{ @$rsNews->title}}">
                         @else
-                            <img class="foto-news-big" src="{{ asset('images/no-image.webp') }}" alt="{{ @$rsNews->title }}">
+                            <img class="thumb-menu-big" src="{{ asset('back/images/no_Image.jpg') }}" alt="{{ @$rsNews->title }}">
                         @endif
                         <input type="file" name="foto" id="foto">
                         <input type="hidden" name="old_foto" value="{{ @$rsNews->foto }}">
@@ -27,19 +28,21 @@
                 </div>
             </div>
         </div>
+            
         <div class="col-md-8">
             <div class="card">
                 <div class="card-body">
                     <div class="form-group">
                         <label for="id">Kode Berita</label>
-                        <input type="hidden" name="id_menu" value="{{ @$rsNews->id }}">
-                        <input type="text" class="form-control @error('id') is-invalid @enderror" name="id" id="id" placeholder="Nama Menu" value="{{ @$rsNews->id }}">
+                        <input type="hidden" name="id" value="{{ @$rsNews->id }}">
+                        <input type="text" class="form-control @error('id') is-invalid @enderror" name="news_kd" id="news_kd" placeholder="Kode Berita" value="{{ @$rsNews->id }}">
                         @error('id')
                             <div id="id" class="invalid-feedback">
                                 {{ $message }}
                             </div>
                         @enderror
                     </div>
+
                     <div class="form-group">
                         <label for="title">Judul News</label>
                         <input type="text" class="form-control @error('title') is-invalid @enderror" name="title" id="title" placeholder="Judul Berita" value="{{ @$rsNews->title }}">
@@ -49,9 +52,10 @@
                             </div>
                         @enderror
                     </div>
+
                     <div class="form-group">
-                        <label for="tb_kat_news_id">Kategori news</label>
-                        <select class="form-control @error('tb_kat_news_id') is-invalid @enderror" name="tb_kat_news_id" id="tb_kat_news_id">
+                        <label for="id_kat_news">Kategori news</label>
+                        <select class="form-control @error('id_kat_news') is-invalid @enderror" name="id_kat_news" id="id_kat_news">
                             <option value="">- Kategori Berita -</option>
                             @foreach ($dtKat as $rsKat)
                                 <option value="{{ $rsKat->id }}" {{ @$rsNews->id_kat_news==$rsKat->id ? "selected" : "" }}>{{ $rsKat->nm_kat }}</option>
@@ -63,6 +67,7 @@
                             </div>
                         @enderror
                     </div>
+
                      <div class="form-group">
                         <label for="tooltip">Tooltip</label>
                         <input type="text" class="form-control @error('tooltip') is-invalid @enderror" name="tooltip" id="tooltip" placeholder="Tooltip" value="{{ @$rsNews->tooltip }}">
@@ -71,7 +76,8 @@
                                 {{ $message }}
                             </div>
                         @enderror
-                    </div> 
+                    </div>
+
                     <div class="form-group">
                         <label for="url">Url</label>
                         <input type="text" class="form-control @error('url') is-invalid @enderror" name="url" id="url" placeholder="Masukan Link Disini" value="{{ @$rsNews->url }}">
@@ -93,6 +99,7 @@
                             </div>
                         @enderror
                     </div>
+
                     <div class="form-group">
                         <label for="desc">Deskripsi</label>
                         <textarea type="text" class="form-control @error('desc') is-invalid @enderror" name="desc" id="desc" placeholder="Deskripsi">{{ @$rsNews->desc }}</textarea>
@@ -101,9 +108,10 @@
                                 {{ $message }}
                             </div>
                         @enderror
-                    </div> 
+                    </div>
+                     
                     <div class="form-group">
-                        <input type="submit" class="btn btn-success" value="SAVE">
+                        <input type="submit" class="btn btn-success" value="save">
                     </div>
                 </div>
             </div>

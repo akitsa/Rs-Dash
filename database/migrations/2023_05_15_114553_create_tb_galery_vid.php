@@ -13,13 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('tb_galery', function (Blueprint $table) {
+        Schema::create('tb_galery_vid', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->string('desc');
-            $table->enum("type",['photo','video']);
-            $table->enum("status",['A','Na']);
+            $table->string("id_Gal_vid");
+            $table->string("title");
             $table->timestamps();
+            $table->string('video')->nullable();
+            $table->string('desc');
+            $table->enum('status',['A','NA']);
         });
     }
 
@@ -30,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tb_galery');
+        Schema::dropIfExists('tb_galery_vid');
     }
 };

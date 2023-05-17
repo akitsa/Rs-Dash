@@ -5,6 +5,15 @@
 
 {{-- isi --}}
 @section('content')
+
+{{-- notif --}}
+@if (session("message"))
+<div class="alert alert-{{ session("type") }}" role="alert">
+    {{ session("message") }}
+</div>
+@endif
+
+
 <div class="card">
     <div class="card-header">
         <div class="card-tools">

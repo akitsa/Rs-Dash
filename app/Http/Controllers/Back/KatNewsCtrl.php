@@ -44,7 +44,7 @@ class KatNewsCtrl extends Controller
         );
         try {
             // save
-            kategorinews::updateorCreate(
+            kategorinews::updateOrCreate(
                 [
                     "id" => $req->input("id_kat")
                 ],
@@ -57,12 +57,12 @@ class KatNewsCtrl extends Controller
             // notif
             $notif = [
                 "type" => "success",
-                "text" => "Data Berhasil Disimpan"
+                "message" => "Data Berhasil Disimpan"
             ];
         } catch (Exception $err) {
             $notif = [
                 "type" => "success",
-                "text" => "Data Gagal Disimpan !".$err->getmessage()
+                "message" => "Data Gagal Disimpan !".$err->getmessage()
             ];
         }
         return redirect (url("kategorinews"))->with($notif);

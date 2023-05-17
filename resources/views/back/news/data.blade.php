@@ -4,6 +4,14 @@
 @section('page-title',"Data News")
 
 @section('content')
+
+{{-- notif --}}
+@if (session("text"))
+        <div class="alert alert-{{ session("type") }}" role="alert">
+            {{ session("text") }}
+        </div>
+@endif
+
 <div class="card">
     <div class="card-header">
         <div class="card-tools">
@@ -30,15 +38,15 @@
                 @foreach ($dtNews as $rsNews)
                     <tr>
                         <td>
-                            @if ( $rsNews -> thumb!="" )
-                                <img class="news-thumb" src="{{ $rsNews->thumb }}" alt="{{ $rsNews->title }}">
+                            @if ( $rsNews -> foto!="" )
+                                <img class="thumb-menu" src="{{ $rsNews->foto }}" alt="{{ $rsNews->title }}">
                             @else 
                             {{-- jika tidak ada no image --}}
                             <img src="" alt="">
                             @endif
                         </td>
                         <td>{{ $rsNews->id  }}</td>
-                        <td>{{ $rsNews->tb_kat_news_id }}</td>
+                        <td>{{ $rsNews->id_kat_news }}</td>
                         <td>{{ $rsNews->title   }}</td>
                         <td>{{ $rsNews->tooltip   }}</td>
                         {{-- <td>{{ $rsNews->url  }}</td> --}}

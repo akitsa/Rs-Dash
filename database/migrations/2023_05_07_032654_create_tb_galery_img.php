@@ -13,15 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('tb_galery_img', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->enum("level",["Admin","User"]);
-            $table->rememberToken();
+            $table->string("id_gal_img",5);
+            $table->string('title',50);
             $table->timestamps();
+            $table->string('foto')->nullable();
+            $table->string('desc',50);
+            $table->enum("status",['A','Na']);
+            $table->index('id_gal_img');
         });
     }
 
@@ -32,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('tb_galery_img');
     }
 };
