@@ -9,4 +9,6 @@ class kategorinews extends Model
 {
     protected $table = "tb_kat_news";
     protected $guarded = ["id"];
+
+    public $timestamps = false;
 }

@@ -17,7 +17,8 @@ return new class extends Migration
             $table->id();
             $table->string('nm_kat');
             $table->enum("status_kat",['A','Na']);
-            $table->timestamps();
+            //$table->timestamps();
+            
         });
     }
 

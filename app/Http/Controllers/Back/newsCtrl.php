@@ -34,7 +34,7 @@ class newsCtrl extends Controller
         //dd($req->all());
         $req->validate(
             [
-                "news_kd" => "required|max:5",
+                //"news_kd" => "required|max:5",
                 "id_kat_news" => "required",
                 "title" => "required",
                 "tooltip" => "required",
@@ -44,8 +44,8 @@ class newsCtrl extends Controller
                 "foto"   => "mimes:jpg,jpeg,png|max:3000"
             ],
             [
-                "news_kd.required" => "kode news harus di isi",
-                "news_kd.max" => "maximal 5 digit",
+                //"news_kd.required" => "kode news harus di isi",
+                //"news_kd.max" => "maximal 5 digit",
                 "id_kat_news.required" =>  "kategori harus di pilih",
                 "title.required" => "judul harus di isi",
                 "tooltip.required" => "tooltip harus di isi",
@@ -76,7 +76,7 @@ class newsCtrl extends Controller
                     "id" => $req->input("id_news")
                 ],
                 [
-                    "news_kd" => $req->input("news_kd"),
+                    //"news_kd" => $req->input("news_kd"),
                     "id_kat_news" =>$req->input("id_kat_news"),
                     "title" =>$req->input("title"),
                     "tooltip" =>$req->input("tooltip"),
@@ -111,14 +111,16 @@ class newsCtrl extends Controller
             // notif
             $notif = [
                 "type" => "success",
-                "text" => "Data Berhasil Disimpan !"
+                "text" => "Data Berhasil Dihapus !"
             ];
         }catch(Exception $e){   
             $notif = [
                 "type" => "success",
-                "text" => "Data Gagal Disimpan !".$e->getMessage()
+                "text" => "Data Gagal Dihapus !".$e->getMessage()
             ];
         }
         return redirect(url('news'))->with($notif);
     }
+
+   
 }

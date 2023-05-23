@@ -17,11 +17,11 @@ return new class extends Migration
             $table->id();
             $table->string("id_gal_img",5);
             $table->string('title',50);
-            $table->timestamps();
             $table->string('foto')->nullable();
             $table->string('desc',50);
             $table->enum("status",['A','Na']);
             $table->index('id_gal_img');
+            $table->timestamps();
         });
     }
 

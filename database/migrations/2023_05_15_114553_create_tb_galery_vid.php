@@ -17,10 +17,10 @@ return new class extends Migration
             $table->id();
             $table->string("id_Gal_vid");
             $table->string("title");
-            $table->timestamps();
             $table->string('video')->nullable();
             $table->string('desc');
             $table->enum('status',['A','NA']);
+            $table->timestamps();
         });
     }
 

@@ -71,6 +71,22 @@ class KatNewsCtrl extends Controller
    }
 
     function delete($id) {
+        try{
+            // save
+            kategorinews::where("id",$id)->delete();
 
+            // notif
+            $notif = [
+                "type" => "success",
+                "text" => "Data Berhasil Disimpan !"
+            ];
+        }catch(Exception $e){   
+            $notif = [
+                "type" => "success",
+                "text" => "Data Gagal Disimpan !".$e->getMessage()
+            ];
+        }
+        return redirect(url('news'))->with($notif);
     }
+
 

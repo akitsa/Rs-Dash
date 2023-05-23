@@ -28,11 +28,11 @@ class galeri_ImgCtrl extends Controller
     
     function save(Request $req) {
         // create update
-        dd($req);
+        
         $req->validate(
             [
                 // validasi
-                "kd_img" => "Required |max:5",
+                "id_gal_img" => "Required |max:5",
                 "title" => "Required",
                 "desc" => "Required",
                 "status" => "Required",
@@ -40,8 +40,8 @@ class galeri_ImgCtrl extends Controller
 
             ],
             [
-                "kd_img.Required" => "Maaf kode ada",
-                "kd_img.max" => "maximal 5 huruf",
+                "id_gal_img.Required" => "Maaf kode ada",
+                "id_gal_img.max" => "maximal 5 huruf",
                 "title.Required" => "title harus di isi",
                 "desc.Required" => "Required",
                 "status" => "Required",
@@ -54,8 +54,8 @@ class galeri_ImgCtrl extends Controller
         // proses upload
         if($req->file("foto")){
             $fileName = time().'.'.$req->file("foto")->extension();
-            $result = $req->file("foto")->move(public_path('back/uploads/galeri'), $fileName);
-            $foto = asset("back/uploads/galeri/".$fileName);
+            $result = $req->file("foto")->move(public_path('back/uploads/galeri/images'), $fileName);
+            $foto = asset("back/uploads/galeri/images/".$fileName);
         } else {
             $foto = $req->input("old_foto");
         }
@@ -67,6 +67,7 @@ class galeri_ImgCtrl extends Controller
                     "id" => $req->input('id_Img')
                 ],
                 [
+                    "id_gal_img"=>$req->input('id_gal_img'),
                     "title" => $req->input('title'),
                     "desc" => $req->input('desc'),
                     "status" => $req->input('status'),
@@ -80,19 +81,35 @@ class galeri_ImgCtrl extends Controller
                 "type" => "success",
                 "text" => "Data Berhasil Disimpan !"
             ];
-            return view('galeri_foto')->with($notif);
+            
 
         }catch(Exception $e){
             $notif = [
                 "type" => "success",
                 "text" => "Data Gagal Disimpan !".$e->getMessage()
             ];
-            return view ('galeri_foto')->with($notif);
         }
+        return redirect('galeri_foto')->with($notif);
 
     }
 
     function delete($id) {
+        try{
+            // save
+            galeri_foto::where("id",$id)->delete();
 
+            // notif
+            $notif = [
+                "type" => "success",
+                "text" => "Data Berhasil Dihapus !"
+            ];
+        }catch(Exception $e){   
+            $notif = [
+                "type" => "success",
+                "text" => "Data Gagal Disimpan !".$e->getMessage()
+            ];
+        }
+        return redirect(url('galeri_foto'))->with($notif);
     }
 }
+

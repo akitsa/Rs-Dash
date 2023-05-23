@@ -38,8 +38,8 @@
                         <td>{{ $rsKat ->nm_kat}} </td>
                         <td>{{$rsKat->status_kat}}</td>
                        <td>
-                            <a href="{{ url("KategoriNews/form/".$rsKat->id)}}"><i class="bi bi-pencil p-2" ></i></a>
-                            <a href="{{ url("KategoriNews/delete/".$rsKat->id)}}"><i class="bi bi-eraser p-2"></i></a>
+                            <a href="{{ url("kategorinews/form/".$rsKat->id)}}"><i class="bi bi-pencil p-2" ></i></a>
+                            <a href="{{ url("kategorinews/delete/".$rsKat->id)}}"><i class="bi bi-eraser p-2"></i></a>
                         </td>
                     </tr>
                 @endforeach

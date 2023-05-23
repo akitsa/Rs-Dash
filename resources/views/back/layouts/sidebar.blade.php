@@ -14,7 +14,7 @@
           <img src="{{ asset('back/images/pp.png')}}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Drs bi (Admin)</a>
+          <a href="#" class="d-block">Sample (Admin)</a>
         </div>
       </div>
 
@@ -34,7 +34,7 @@
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
+                with font-awesome or any other icon font library -->
           <li class="nav-item ">
             <a href="#" class="nav-link ">
               <i class="nav-icon bi bi-people-fill "></i>
@@ -58,7 +58,7 @@
               </li>
             </ul>
           </li>
-             <li class="nav-item ">
+              <li class="nav-item ">
             <a href="#" class="nav-link ">
               <i class="nav-icon bi bi-book"></i>
               <p>
@@ -81,31 +81,57 @@
               </li>
             </ul>
           </li>
-           <li class="nav-item ">
+
+            <li class="nav-item ">
             <a href="#" class="nav-link ">
               <i class="nav-icon bi bi-book-half"></i>
               <p>
-                Galeri
+                Galeri foto
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{ url('galeri')   }}" class="nav-link">
+                <a href="{{ url('galeri_foto')   }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Data List</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{ url('galeri/form')  }}" class="nav-link">
+                <a href="{{ url('galeri_foto/form')  }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Add New</p>
                 </a>
               </li>
             </ul>
           </li>
-             <li class="nav-item ">
+
+          <li class="nav-item ">
             <a href="#" class="nav-link ">
+              <i class="nav-icon bi bi-book-half"></i>
+              <p>
+                Galeri video
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{ url('galeri_video')   }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Data List</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ url('galeri_video/form')  }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add New</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+              <li class="nav-item ">
+              <a href="#" class="nav-link ">
               <i class="nav-icon bi bi-tablet-landscape"></i>
               <p>
                 profil
@@ -130,7 +156,7 @@
             
 
             <li class="nav-item">
-                <a href="#" class="nav-link text-danger">
+                <a href="{{route('signout')}}" class="nav-link text-danger">
                   <i class="bi bi-arrow-bar-right nav-icon"></i>
                   <p>Log out</p>
                 </a>

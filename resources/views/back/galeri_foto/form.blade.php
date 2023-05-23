@@ -65,8 +65,8 @@
                     <div class="form-group">
                         <label for="status">Status</label>
                         <select class="form-control @error('status') is-invalid @enderror" name="status" id="status">
-                            <option value="A" {{ @$rsImg->status=="A" ? "selected" : "" }}>Available</option>
-                            <option value="NA" {{ @$rsImg->status=="Na" ? "selected" : "" }}>Not Available</option>
+                            <option value="A" {{ @$rsImg->status=="A" ? "selected" : "" }}>Active</option>
+                            <option value="NA" {{ @$rsImg->status=="Na" ? "selected" : "" }}>Non Active</option>
                         </select>
                         @error('status')
                             <div id="status" class="invalid-feedback">
