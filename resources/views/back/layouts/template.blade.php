@@ -35,6 +35,8 @@
     {{-- <!-- /.content-header  --}}
          <div class="content">
            <div class="container-fluid">
+            {{-- notif --}}
+
               @yield('content')
            </div><!-- /.container-fluid -->
         </div>
@@ -54,7 +56,7 @@
   <footer class="main-footer">
     <!-- To the right -->
     <div class="float-right d-none d-sm-inline">
-      sdbys
+      {{-- free caption --}}
     </div>
     <!-- Default to the left -->
     <strong>Copyright &copy;{{ date("Y") }}.</strong> All rights reserved.

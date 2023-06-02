@@ -20,6 +20,8 @@
 <!-- AdminLTE App -->
 <script src="{{ asset('back/dist/js/adminlte.min.js') }}"></script>
 <!-- Ekko Lightbox -->
-<script src="{{ asset ('../back/plugins/ekko-lightbox/ekko-lightbox.min.js')}}"></script>
+<script src="{{ asset ('back/plugins/ekko-lightbox/ekko-lightbox.min.js')}}"></script>
+<!-- Filterizr-->
+<script src="{{ asset('back/plugins/filterizr/jquery.filterizr.min.js')}}"></script>
 {{-- Custom JS --}}
 <script src="{{ asset('back/dist/js/custom.js') }}"></script>

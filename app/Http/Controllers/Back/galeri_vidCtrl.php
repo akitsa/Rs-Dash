@@ -31,15 +31,14 @@ class galeri_vidCtrl extends Controller
          //dd($req->all());
         $req->validate(
             [
-                "id_gal_vid" => "Required |max:5",
+              
                 "title" => "Required",
                 "desc" => "Required",
                 "status" => "Required",
                 "video"   => "mimes:mp4,mov,ogg,3gp"
             ],
             [
-                "id_gal_vid.Required" => "Maaf kode ada",
-                "id_gal_vid.max" => "maximal 5 huruf",
+               
                 "title.Required" => "title harus di isi",
                 "desc.Required" => "Required",
                 "status" => "Required",

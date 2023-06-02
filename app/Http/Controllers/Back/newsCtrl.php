@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\back;
 
+use PDOException;
 use App\Models\back\news;
 use Illuminate\Http\Request;
 use App\Models\back\kategorinews;
@@ -89,14 +90,14 @@ class newsCtrl extends Controller
             //notif
             $notif = [
                 "type" => "success",
-                "message" => "Data Berhasil Disimpan !"
+                "text" => "Data Berhasil Disimpan !"
             ];
             
            
-        } catch(Exception $e){
+        } catch(PDOException $e){
             $notif = [
                 "type" => "success",
-                "message" => "Data Gagal Disimpan !".$e->getMessage()
+                "text" => "Data Gagal Disimpan !".$e->getMessage()
             ];
         }
         return redirect (url("news"))->with($notif);
@@ -113,9 +114,9 @@ class newsCtrl extends Controller
                 "type" => "success",
                 "text" => "Data Berhasil Dihapus !"
             ];
-        }catch(Exception $e){   
+        }catch(PDOException $e){   
             $notif = [
-                "type" => "success",
+                "type" => "danger",
                 "text" => "Data Gagal Dihapus !".$e->getMessage()
             ];
         }

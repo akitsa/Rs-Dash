@@ -32,7 +32,7 @@ class galeri_ImgCtrl extends Controller
         $req->validate(
             [
                 // validasi
-                "id_gal_img" => "Required |max:5",
+               
                 "title" => "Required",
                 "desc" => "Required",
                 "status" => "Required",
@@ -40,8 +40,7 @@ class galeri_ImgCtrl extends Controller
 
             ],
             [
-                "id_gal_img.Required" => "Maaf kode ada",
-                "id_gal_img.max" => "maximal 5 huruf",
+             
                 "title.Required" => "title harus di isi",
                 "desc.Required" => "Required",
                 "status" => "Required",

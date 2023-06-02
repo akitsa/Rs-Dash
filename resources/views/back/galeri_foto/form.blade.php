@@ -30,18 +30,6 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-body">
-
-                    <div class="form-group">
-                        <label for="id">Kode Galeri</label>
-                        <input type="hidden" name="id" value="{{ @$rsImg->id }}">
-                        <input type="text" class="form-control @error('id') is-invalid @enderror" name="id_gal_img" id="id_gal_img" placeholder="Img-123" value="{{ @$rsImg->id }}">
-                        @error('id')
-                            <div id="id" class="invalid-feedback">
-                                {{ $message }}
-                            </div>
-                        @enderror
-                    </div>
-
                     <div class="form-group">
                         <label for="title">Judul Galeri</label>
                         <input type="text" class="form-control @error('title') is-invalid @enderror" name="title" id="title" placeholder="Judul Foto" value="{{ @$rsImg->title }}">

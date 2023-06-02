@@ -14,7 +14,7 @@
           <img src="{{ asset('back/images/pp.png')}}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Sample (Admin)</a>
+          <a href="#" class="d-block">{{ @Auth::user()->name}} ( {{@Auth::user()->level}} )</a>
         </div>
       </div>
 

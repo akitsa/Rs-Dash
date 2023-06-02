@@ -9,4 +9,6 @@ class profile extends Model
 {
     protected $table = "tb_profile";
     protected $guarded = ['id'];
+
+    public $timestamps = false;
 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\back;
 
+use PDOException;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -11,7 +12,9 @@ use Illuminate\Support\Facades\Hash;
 class authCtrl extends Controller
 {
     function login(){
+       
         return view('back.auth.login');
+        
     }
 
     // cek login 
@@ -70,16 +73,16 @@ class authCtrl extends Controller
                 "email" => $req ->email,
                 "password" => Hash::make($req->password),
                 "level" => "User",
-                "status" => 1
+                
             ]);
             $mess = [
                 "type" => "succes",
                 "text"=> "Registrasi Berhasil Dilakukan"
             ];
-        }catch(Exception $e) {
+        }catch(PDOException $e) {
             $mess = [
                 "type" => "danger",
-                "text" => "Registrasi Gagal"
+                "text" => "Registrasi Gagal".$e->getMessage()
               ];    
         }
         return redirect ("auth/login")->with($mess);

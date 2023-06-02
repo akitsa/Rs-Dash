@@ -39,18 +39,6 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-body">
-
-                    <div class="form-group">
-                        <label for="id">Kode Galeri</label>
-                        <input type="hidden" name="id" value="{{ @$rsVid->id }}">
-                        <input type="text" class="form-control @error('id') is-invalid @enderror" name="id_gal_vid" id="id_gal_vid" placeholder="Vid-123" value="{{ @$rsVid->id }}">
-                        @error('id')
-                            <div id="id" class="invalid-feedback">
-                                {{ $message }}
-                            </div>
-                        @enderror
-                    </div>
-
                     <div class="form-group">
                         <label for="title">Judul Galeri</label>
                         <input type="text" class="form-control @error('title') is-invalid @enderror" name="title" id="title" placeholder="Judul Video" value="{{ @$rsVid->title }}">

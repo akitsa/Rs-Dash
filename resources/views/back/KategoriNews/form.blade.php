@@ -22,10 +22,10 @@
                         @enderror
                     </div>
                     <div class="form-group">
-                        <label for="status_kat">Stok</label>
+                        <label for="status_kat">Status</label>
                         <select class="form-control @error('status_kat') is-invalid @enderror" name="status_kat" id="status_kat">
-                            <option value="A" {{ @$rsKat->status_kat=="A" ? "selected" : "" }}>Available</option>
-                            <option value="NA" {{ @$rsMenu->mn_stok=="NA" ? "selected" : "" }}>Not Available</option>
+                            <option value="A" {{ @$rsKat->status_kat=="A" ? "selected" : "" }}>Active</option>
+                            <option value="NA" {{ @$rsMenu->mn_stok=="NA" ? "selected" : "" }}>Not Active</option>
                         </select>
                         @error('status_kat')
                             <div id="status_kat" class="invalid-feedback">

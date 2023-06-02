@@ -15,7 +15,6 @@ return new class extends Migration
     {
         Schema::create('tb_galery_vid', function (Blueprint $table) {
             $table->id();
-            $table->string("id_Gal_vid");
             $table->string("title");
             $table->string('video')->nullable();
             $table->string('desc');

@@ -10,13 +10,15 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
 
 {{-- data table --}}
-<link rel="stylesheet" href="{{ asset('../../back/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css')}}">
-<link rel="stylesheet" href="{{ asset ('../../back/plugins/datatables-responsive/css/responsive.bootstrap4.min.css')}}">
-<link rel="stylesheet" href="{{ asset('../../back/plugins/datatables-buttons/css/buttons.bootstrap4.min.css')}}">
+<link rel="stylesheet" href="{{ asset('back/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css')}}">
+<link rel="stylesheet" href="{{ asset ('back/plugins/datatables-responsive/css/responsive.bootstrap4.min.css')}}">
+<link rel="stylesheet" href="{{ asset('back/plugins/datatables-buttons/css/buttons.bootstrap4.min.css')}}">
 
 <!-- Ekko Lightbox -->
-<link rel="stylesheet" href="{{ asset ('../back/plugins/ekko-lightbox/ekko-lightbox.css')}}">
+<link rel="stylesheet" href="{{ asset ('back/plugins/ekko-lightbox/ekko-lightbox.css')}}">
 <!-- Theme style -->
 <link rel="stylesheet" href="{{ asset('back/dist/css/adminlte.min.css') }}">
 {{-- custom css --}}
 <link rel="stylesheet" href="{{ asset('back/dist/css/custom.css') }}">
+{{-- boostrap icon --}}
+<link rel="stylesheet" href="{{ asset('back/dist/css/icon/font/fonts/bootstrap-icons.min.css')  }}">

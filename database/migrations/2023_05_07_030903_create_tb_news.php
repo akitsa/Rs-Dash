@@ -15,7 +15,6 @@ return new class extends Migration
     {
         Schema::create('tb_news', function (Blueprint $table) {
             $table->id();
-            $table->string("news_kd",5);
             $table->string("id_kat_news",5);
             $table->string('title',50);
             $table->string('tooltip',50);

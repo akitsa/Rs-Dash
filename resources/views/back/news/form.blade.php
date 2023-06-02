@@ -112,7 +112,7 @@
                     </div>
 
                     <div class="form-group">
-                        <input type="submit" class="btn btn-success" value="save">
+                        <input type="submit" class="btn btn-success" value="SAVE">
                     </div>
 
                 </div>

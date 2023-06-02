@@ -15,12 +15,11 @@ return new class extends Migration
     {
         Schema::create('tb_galery_img', function (Blueprint $table) {
             $table->id();
-            $table->string("id_gal_img",5);
             $table->string('title',50);
             $table->string('foto')->nullable();
             $table->string('desc',50);
             $table->enum("status",['A','Na']);
-            $table->index('id_gal_img');
+        
             $table->timestamps();
         });
     }

@@ -10,6 +10,7 @@ $(document).ready(function () {
     });
     
     CKEDITOR.replace('editor');
+    
     $(function () {
         $(document).on('click', '[data-toggle="lightbox"]', function(event) {
           event.preventDefault();

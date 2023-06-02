@@ -4,8 +4,9 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
-class roleAdmin
+class RoleAdmin
 {
     /**
      * Handle an incoming request.
@@ -16,14 +17,15 @@ class roleAdmin
      */
     public function handle(Request $request, Closure $next)
     {
-        if(Auth::check()&& Auth::user()->level=="admin"){
-        return $next($request);
-        }
-        // jika tidak punnya akses
-        $mess = [
-            "type" => "danger",
-            "text" => "Maaf anda tidak punya akses",
-        ];
-        return redirect('/admin')->with($mess);
+        if(Auth::check() && Auth::user()->level=="Admin"){
+            return $next($request);
+            }
+    
+            // jika tidak punya akses
+            $mess = [
+                "type" => "danger",
+                "text" => "Maaf Anda Tidak Punya Akses" 
+            ];
+            return redirect ('/admin')->with($mess);
     }
 }

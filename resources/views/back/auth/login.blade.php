@@ -9,6 +9,12 @@
 
 </head>
 <body>
+    @if (session("text"))
+        <div class="alert alert-{{ session("type") }}" role="alert">
+            {{ session("text") }}
+        </div>
+@endif
+
     <div class="main">
         <!-- Sing in  Form -->
         <section class="sign-in">

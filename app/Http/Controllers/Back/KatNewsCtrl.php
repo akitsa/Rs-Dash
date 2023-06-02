@@ -2,13 +2,16 @@
 
 namespace App\Http\Controllers\back;
 
+use PDOException;
 use Illuminate\Http\Request;
 use App\Models\back\kategorinews;
 use App\Http\Controllers\Controller;
 
+use function PHPSTORM_META\map;
+
 class KatNewsCtrl extends Controller
 {
-    function index () {
+     function index () {
         // response list data
         $data = [
             "title" => "Kategori News",
@@ -21,13 +24,13 @@ class KatNewsCtrl extends Controller
         // menambah atau menghapus data
         $data = [
             "title" => "Kategori News Form",
-            "rsKat" => kategorinews::where("id",$req->id_Kat)->first()
+            "rsKat" => kategorinews::where("id",$req->id_kat)->first()
         ];
         return view('back/kategorinews/form',$data);
 
     }
 
-    function save (Request $req) {
+        function save (Request $req) {
         // create or update
         $req->validate(
             [
@@ -57,36 +60,37 @@ class KatNewsCtrl extends Controller
             // notif
             $notif = [
                 "type" => "success",
-                "message" => "Data Berhasil Disimpan"
+                "text" => "Data Berhasil Disimpan"
             ];
-        } catch (Exception $err) {
+        } catch (PDOException $err) {
             $notif = [
                 "type" => "success",
-                "message" => "Data Gagal Disimpan !".$err->getmessage()
+                "text" => "Data Gagal Disimpan !".$err->getmessage()
             ];
         }
         return redirect (url("kategorinews"))->with($notif);
-    }
-        
-   }
-
-    function delete($id) {
-        try{
-            // save
-            kategorinews::where("id",$id)->delete();
-
-            // notif
-            $notif = [
-                "type" => "success",
-                "text" => "Data Berhasil Disimpan !"
-            ];
-        }catch(Exception $e){   
-            $notif = [
-                "type" => "success",
-                "text" => "Data Gagal Disimpan !".$e->getMessage()
-            ];
         }
-        return redirect(url('news'))->with($notif);
-    }
+
+        function delete($id){
+            try{
+                kategorinews::where("id",$id)->delete();
+
+                $notif = [
+                    "type" => "success",
+                    "text" => "data berhasil di hapus",
+                ];
+            } catch(PDOException $e){
+                $notif = [
+                    "type" => "danger",
+                    "text" => "data gagal di hapus"
+                ];
+            }
+            return redirect(url("kategorinews"))->with($notif);
+        }
+        
+}
+
+     
+
 
 

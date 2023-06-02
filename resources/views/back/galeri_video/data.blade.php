@@ -4,6 +4,12 @@
 @section('page-title',"Data Galeri video")
 
 @section('content')
+@if (session("text"))
+        <div class="alert alert-{{ session("type") }}" role="alert">
+            {{ session("text") }}
+        </div>
+@endif
+
 <div class="card">
     <div class="card-header">
         <div class="card-tools">
@@ -30,8 +36,8 @@
                         <td>
                             @if ( $rsVid -> video!="" )
                                 {{-- <img class="thumb-video" src="{{ $rsVid->video }}" alt="{{ $rsVid->title }}"> --}}
-                                <video controls>
-                                    <source src="{{$rsVid->video}}"type="video/mp4">
+                                <video style="width: 200px"; height="auto"; controls>
+                                    <source src="{{$rsVid->video}}"type="video/mp4" >
                                         Your browser does not support the video tag.
                                 </video>
                             @else 
