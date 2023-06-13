@@ -16,6 +16,7 @@
                             @else
                                 <img class="thumb-menu-big" src="{{ asset('back/images/No_Image.jpg') }}" alt="{{ @$rsImg->title }}">
                             @endif
+                            <input type="hidden" name="id_img" value="{{ @$rsImg->id }}">
                             <input type="file" name="foto" id="foto"  >
                             <input type="hidden" name="old_foto" value="{{ @$rsImg->foto }}">
                             @error('foto')

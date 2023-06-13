@@ -1,24 +1,31 @@
-<!-- Favicons -->
-<link href="{{ asset ('front/assets/img/logo.jpg') }}" rel="icon">
-<link href="{{ asset ('front/assets/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
+<!-- ======= Top Bar ======= -->
+<div id="topbar" class="d-flex align-items-center fixed-top">
+    <div class="container d-flex justify-content-between">
+        <div class="contact-info d-flex align-items-center">
+            <i class="bi bi-envelope"></i> <a href="mailto:contact@example.com">rsisitiaisyah@gmail.com</a>
+            <i class="bi bi-phone"></i> (0351) 464882
+        </div>
+        <div class="d-none d-lg-flex social-links align-items-center">
+            <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.youtube.com/rsi" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
+            <a href="">Log in</a>
+        </div>
+    </div>
+</div>
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
 
-<!-- Google Fonts -->
-<link
-  href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
-  rel="stylesheet">
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <a href="{{('/')}}" class="logo "><img src="{{ asset ('front/assets/img/logo.jpg') }}" alt=""
+          class="img-fluid"></a>
+      <h1 class="logo me-auto"><a href="{{ ('/') }}">RSI Siti Aisyah</a></h1>
 
-<!-- Vendor CSS Files -->
-<link href="{{ asset ('front/assets/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet">
-<link href="{{ asset ('front/assets/vendor/animate.css/animate.min.css') }}" rel="stylesheet">
-<link href="{{ asset ('front/assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
-<link href="{{ asset ('front/assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
-<link href="{{ asset ('front/assets/vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
-<link href="{{ asset ('front/assets/vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
-<link href="{{ asset ('front/assets/vendor/remixicon/remixicon.css') }}" rel="stylesheet">
-<link href="{{ asset ('front/assets/vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
+      @include('front.layouts.navbar')
 
-<!-- Template Main CSS File -->
-<link href="{{ asset ('front/assets/css/style.css') }}" rel="stylesheet">
+      <!-- <a href="#appointment" class="appointment-btn scrollto"><span class="d-none d-md-inline">Make an</span> Appointment</a> -->
 
-{{-- Swiper Bundle --}}
-<link href="{{ asset ('front/assets/css/swiper-bundle.min.css') }}" rel="stylesheet">
+    </div>
+  </header><!-- End Header -->

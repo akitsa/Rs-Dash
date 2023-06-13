@@ -11,7 +11,7 @@ use function PHPSTORM_META\map;
 
 class KatNewsCtrl extends Controller
 {
-     function index () {
+    public function index () {
         // response list data
         $data = [
             "title" => "Kategori News",
@@ -20,48 +20,65 @@ class KatNewsCtrl extends Controller
         return view ("back/kategorinews/data",$data);
     }
 
-    function form (Request $req) {
+    public function create (Request $request) {
         // menambah atau menghapus data
         $data = [
             "title" => "Kategori News Form",
-            "rsKat" => kategorinews::where("id",$req->id_kat)->first()
+            "rsKat" => kategorinews::where("id",$request->id_kat)->first()
         ];
         return view('back/kategorinews/form',$data);
 
     }
 
-        function save (Request $req) {
+      public function store (Request $request) {
         // create or update
-        $req->validate(
+        //dd($request->all());
+        $request->validate(
             [
                 "nm_kat" => "required|max:30",
+               //"desc" => "required",
+                "foto"   => "mimes:jpg,jpeg,png",
                 "status_kat" => "required"
             ],
             [
-                "nm_kat.required"=>"Wajib Di isi",
-                // "nm_kat.unique"=>"Maaf category sudah ada",
+                "nm_kat.required"=> "Wajib Di isi",
+                //"desc.required" => "Deskripsi Wajib Di isi",
+                "foto.mimes" => "Foto harus .jpg, .jpeg atau png !", 
                 "nm_kat.max"=> "Maximal 30 karakter",
                 "status_kat.required" => "wajib di pilih"
 
             ]
         );
+        // proses upload
+        if($request->file("foto")){
+            $fileName = time().'.'.$request->file("foto")->extension();
+            $result = $request->file("foto")->move(public_path('back/uploads/kategorinews/images'), $fileName);
+            $foto = asset("back/uploads/kategorinews/images/".$fileName);
+        } else {
+            $foto = $request->input("old_foto");
+        }
+
         try {
             // save
             kategorinews::updateOrCreate(
                 [
-                    "id" => $req->input("id_kat")
+                    "id" => $request->input("id_kat")
                 ],
                 [
-                    "nm_kat" => $req->input("nm_kat"),
-                    "status_kat" => $req->input('status_kat')
+                    "nm_kat" => $request->input("nm_kat"),
+                    "desc" => $request->input('desc'),
+                    "foto" => $foto,
+                    "status_kat" => $request->input('status_kat')
 
                 ]
             );
-            // notif
+            
+            //notifikasi
             $notif = [
                 "type" => "success",
                 "text" => "Data Berhasil Disimpan"
             ];
+
         } catch (PDOException $err) {
             $notif = [
                 "type" => "success",
@@ -69,9 +86,9 @@ class KatNewsCtrl extends Controller
             ];
         }
         return redirect (url("kategorinews"))->with($notif);
-        }
+    }
 
-        function delete($id){
+        function destroy($id){
             try{
                 kategorinews::where("id",$id)->delete();
 
@@ -82,7 +99,7 @@ class KatNewsCtrl extends Controller
             } catch(PDOException $e){
                 $notif = [
                     "type" => "danger",
-                    "text" => "data gagal di hapus"
+                    "text" => "data gagal di hapus".$e->getMessage()
                 ];
             }
             return redirect(url("kategorinews"))->with($notif);

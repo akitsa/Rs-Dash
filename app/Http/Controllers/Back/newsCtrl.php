@@ -4,6 +4,7 @@ namespace App\Http\Controllers\back;
 
 use PDOException;
 use App\Models\back\news;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Models\back\kategorinews;
 use App\Http\Controllers\Controller;
@@ -23,7 +24,7 @@ class newsCtrl extends Controller
     function form (Request $req) {
     // add data / edit data
     $data = [
-        "title" => "Kategori News Form",
+        "title" => "News Form",
         "dtKat" => kategorinews::All(),
         "rsNews" => news::where("id",$req->id_news)->first()
     ];
@@ -80,7 +81,7 @@ class newsCtrl extends Controller
                     //"news_kd" => $req->input("news_kd"),
                     "id_kat_news" =>$req->input("id_kat_news"),
                     "title" =>$req->input("title"),
-                    "tooltip" =>$req->input("tooltip"),
+                    "tooltip" =>Str::slug($req->title,'-'),
                     "url" =>$req->input("url"),
                     "desc" =>$req->input("desc"),
                     "status"=>$req->input("status"),
@@ -123,5 +124,5 @@ class newsCtrl extends Controller
         return redirect(url('news'))->with($notif);
     }
 
-   
+    
 }

@@ -42,7 +42,7 @@
                                 <img class="thumb-menu" src="{{ $rsNews->foto }}" alt="{{ $rsNews->title }}">
                             @else 
                             {{-- jika tidak ada no image --}}
-                            <img src="" alt="">
+                            <img src="old-photo" alt="">
                             @endif
                         </td>
                         <td>{{ $rsNews->id  }}</td>

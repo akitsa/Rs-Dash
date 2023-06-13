@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\back;
 
+use PDOException;
+use Illuminate\Http\Request;
 use App\Models\back\galeri_video;
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 
 class galeri_vidCtrl extends Controller
 {
@@ -21,7 +22,7 @@ class galeri_vidCtrl extends Controller
         //form edit dan tambah data
         $data = [
             "title" => "Form Galeri Video",
-            "rsVid" => galeri_video::where("id",$req->id_Vid)->first()
+            "rsVid" => galeri_video::where("id", $req->id_vid)->first()
         ];
         return view ('back.galeri_video.form',$data);
     }
@@ -53,16 +54,15 @@ class galeri_vidCtrl extends Controller
             $result = $req->file("video")->move(public_path('back/uploads/galeri/video'), $fileName);
             $video = asset("back/uploads/galeri/video/".$fileName);
         } else {
-            $video = $req->input("old_foto");
+            $video = $req->input("old_video");
         }
          // proses simpan
         try{
             galeri_video::updateOrCreate(
                 [
-                    "id" => $req->input('id_Vid')
+                    "id" => $req->input('id_vid')
                 ],
-                [  
-                    "id_gal_vid"=>$req->input('id_gal_video'),
+                [                  
                     "title" => $req->input('title'),
                     "desc" => $req->input('desc'),
                     "status" => $req->input('status'),
@@ -78,7 +78,7 @@ class galeri_vidCtrl extends Controller
             ];
             
 
-        }catch(Exception $e){
+        }catch(PDOException $e){
             $notif = [
                 "type" => "success",
                 "text" => "Data Gagal Disimpan !".$e->getMessage()
@@ -98,7 +98,7 @@ class galeri_vidCtrl extends Controller
                 "type" => "success",
                 "text" => "Data Berhasil Disimpan !"
             ];
-        }catch(Exception $e){   
+        }catch(PDOException $e){   
             $notif = [
                 "type" => "success",
                 "text" => "Data Gagal Disimpan !".$e->getMessage()

@@ -1,43 +1,32 @@
 <nav id="navbar" class="navbar order-last order-lg-0">
     <ul>
         <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-        <li class="dropdown"><a class="nav-link scrollto" href="#"><span>Info</span> <i
+        <li><a class="nav-link scrollto" href="{{('profile')}}">Profil</a></li>
+        <li><a class="nav-link scrollto" href="{{('berita')}}">Berita</a></li>
+
+        <li class="dropdown"><a class="nav-link scrollto" href="#"><span>Layanan</span> <i
                     class="bi bi-chevron-down"></i></a>
             <ul>
-                <li class="dropdown"><a href="#"><span>Artikel Kesehatan</span><i class="bi bi-chevron-right"></i></a>
-                    <ul>
-                        <li><a href="#">Info Program Nasional</a></li>
-                        <li><a href="#">Info Kesehatan Umum </a></li>
-                        <li><a href="#">Info Umum</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">Berita</a></li>
-                <li><a href="#">Sejarah</a></li>
+                <li><a href="{{ ('ugd') }}">IGD 24 Jam</a></li>
+                <li><a href="{{   ('rawatjalan') }}">Rawat Jalan</a></li>
+                <li><a href="#">Rawat Inap</a></li>
+                <li><a href="#">Penunjang Medis</a></li>
+                <li><a href="#">Fasilitas</a></li>
             </ul>
         </li>
         {{-- <li><a class="nav-link scrollto" href="#services">Fasilitas</a></li> --}}
-        <li class="dropdown"><a class="nav-link scrollto" href="#services"><span>Fasilitas</span> <i
+        <li class="dropdown"><a class="nav-link scrollto" href="#services"><span>Dokter</span> <i
                     class="bi bi-chevron-down"></i></a>
             <ul>
-                <li><a href="#">Drop Down 1</a></li>
-                <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
-                    <ul>
-                        <li><a href="#">Deep Drop Down 1</a></li>
-                        <li><a href="#">Deep Drop Down 2</a></li>
-                        <li><a href="#">Deep Drop Down 3</a></li>
-                        <li><a href="#">Deep Drop Down 4</a></li>
-                        <li><a href="#">Deep Drop Down 5</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">Drop Down 2</a></li>
-                <li><a href="#">Drop Down 3</a></li>
-                <li><a href="#">Drop Down 4</a></li>
+                <li><a href="#">Dokter Kami</a></li>
+                <li><a href="#">Jadwal Dokter Spesialis</a></li>
+                <li><a href="#">Jadwal Dokter NonSpesialis</a></li>
             </ul>
         </li>
-        <li><a class="nav-link scrollto" href="#about">Jadwal Dokter</a></li>
-        <li><a class="nav-link scrollto" href="#gallery">Galeri</a></li>
-        <li><a class="nav-link scrollto" href="#departments">Departemen</a></li>
-        <li><a class="nav-link scrollto" href="#doctors">Dokter</a></li>
+       
+        {{-- <li><a class="nav-link scrollto" href="#gallery">Galeri</a></li> --}}
+        {{-- <li><a class="nav-link scrollto" href="#departments">Departemen</a></li> --}}
+        {{-- <li><a class="nav-link scrollto" href="#doctors">Dokter</a></li> --}}
         <li><a class="nav-link scrollto" href="#contact">Kontak Kami</a></li>
     </ul>
     <i class="bi bi-list mobile-nav-toggle"></i>

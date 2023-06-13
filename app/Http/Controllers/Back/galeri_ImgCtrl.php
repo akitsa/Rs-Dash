@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Http\Controllers\back;
+use PDOException;
+use Illuminate\Http\Request;
 use App\Models\back\galeri_foto;
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 
 class galeri_ImgCtrl extends Controller
 {
@@ -19,7 +20,7 @@ class galeri_ImgCtrl extends Controller
     function form(Request $req) {
         $data = [
             "title" => "Kategori News Form",
-            "rsImg" => galeri_foto::where("id",$req->id_Img)->first()
+            "rsImg" => galeri_foto::where("id",$req->id_img)->first()
         ];
    
         return view ('back.galeri_foto.form',$data);
@@ -63,7 +64,7 @@ class galeri_ImgCtrl extends Controller
         try{
             galeri_foto::updateOrCreate(
                 [
-                    "id" => $req->input('id_Img')
+                    "id" => $req->input('id_img')
                 ],
                 [
                     "id_gal_img"=>$req->input('id_gal_img'),
@@ -82,7 +83,7 @@ class galeri_ImgCtrl extends Controller
             ];
             
 
-        }catch(Exception $e){
+        }catch(PDOException $e){
             $notif = [
                 "type" => "success",
                 "text" => "Data Gagal Disimpan !".$e->getMessage()
@@ -102,7 +103,7 @@ class galeri_ImgCtrl extends Controller
                 "type" => "success",
                 "text" => "Data Berhasil Dihapus !"
             ];
-        }catch(Exception $e){   
+        }catch(PDOException $e){   
             $notif = [
                 "type" => "success",
                 "text" => "Data Gagal Disimpan !".$e->getMessage()

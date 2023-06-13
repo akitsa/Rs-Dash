@@ -9,23 +9,13 @@
   <title>Rumah Sakit Islam Siti Aisyah Madiun</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
-  @include('front.layouts.header')
+  @include('front.layouts.sc_header')
 </head>
 
 <body>
 
-  @include('front.layouts.topbar')
-
-  <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top">
-    <div class="container d-flex align-items-center">
-
-      <!-- Uncomment below if you prefer to use an image logo -->
-      <a href="{{('/')}}" class="logo "><img src="{{ asset ('front/assets/img/logo.jpg') }}" alt=""
-          class="img-fluid"></a>
-      <h1 class="logo me-auto"><a href="{{ ('/') }}">RSI Siti Aisyah</a></h1>
-
-      @include('front.layouts.navbar')
+  @include('front.layouts.header')
+      {{-- @include('front.layouts.navbar') --}}
 
       <!-- <a href="#appointment" class="appointment-btn scrollto"><span class="d-none d-md-inline">Make an</span> Appointment</a> -->
 
@@ -35,90 +25,19 @@
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex align-items-center">
     <div class="container">
-      <h1>RUMAH SAKIT ISLAM SITI AISYAH MADIUN</h1>
+      {{-- <h1>RUMAH SAKIT ISLAM SITI AISYAH MADIUN</h1>
       <h2>Jl.Mayjend Sungkono No.38 40 Madiun</h2>
       <h2>Telp : (0351) 464822, 462212 Fax. 0351 464009</h2>
       <h2>Email : rsimadiun@yahoo.com</h2>
-      {{-- <a href="#about" class="btn-get-started scrollto"></a> --}}
+      <a href="#about" class="btn-get-started scrollto"></a> --}}
     </div>
   </section><!-- End Hero -->
 
-  {{-- <section class="home">
-    <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
-        </div>
-        <div class="swiper-slide">
-          <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
-        </div>
-        <div class="swiper-slide">
-          <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
-        </div>
-        <div class="swiper-slide">
-          <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
-        </div>
-        <div class="swiper-slide">
-          <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
-        </div>
-        <div class="swiper-slide">
-          <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
-        </div>
-        <div class="swiper-slide">
-          <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
-        </div>
-        <div class="swiper-slide">
-          <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
-        </div>
-        <div class="swiper-slide">
-          <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
-        </div>
-        <div class="swiper-slide">
-          <img src="https://swiperjs.com/demos/images/nature-10.jpg" />
-        </div>
-      </div>
-      <div class="swiper-button-next"></div>
-      <div class="swiper-button-prev"></div>
-    </div>
-    <div thumbsSlider="" class="swiper mySwiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
-        </div>
-        <div class="swiper-slide">
-          <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
-        </div>
-        <div class="swiper-slide">
-          <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
-        </div>
-        <div class="swiper-slide">
-          <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
-        </div>
-        <div class="swiper-slide">
-          <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
-        </div>
-        <div class="swiper-slide">
-          <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
-        </div>
-        <div class="swiper-slide">
-          <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
-        </div>
-        <div class="swiper-slide">
-          <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
-        </div>
-        <div class="swiper-slide">
-          <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
-        </div>
-        <div class="swiper-slide">
-          <img src="https://swiperjs.com/demos/images/nature-10.jpg" />
-        </div>
-      </div>
-    </div>
-  </section> --}}
+  {{-- @yield('content') --}}
 
   <main id="main">
     <!-- ======= Why Us Section ======= -->
-    <section id="why-us" class="why-us">
+    <section id="services" class="services">
       <div class="container">
         @yield('content')
       </div>
@@ -144,30 +63,18 @@
           </div>
 
           <div class="col-lg-2 col-md-6 footer-links">
-            <h4>Useful Links</h4>
-            <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Tentang Kami</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Servis</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
-            </ul>
+            
+           
           </div>
 
           <div class="col-lg-3 col-md-6 footer-links">
             <h4></h4>
-            <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
-            </ul>
+           
           </div>
 
           <div class="col-lg-4 col-md-6 footer-newsletter">
-            <h4>Join Our Newsletter</h4>
-            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
+            <h4>Berlangganan berita</h4>
+            <p>masukan email anda untuk update berita kami</p>
             <form action="" method="post">
               <input type="email" name="email"><input type="submit" value="Subscribe">
             </form>
@@ -204,7 +111,7 @@
   <div id="preloader"></div>
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
       class="bi bi-arrow-up-short"></i></a>
-  @include('front.layouts.footer')
+  @include('front.layouts.sc_footer')
 </body>
 
 </html>

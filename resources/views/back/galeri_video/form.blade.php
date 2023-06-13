@@ -20,10 +20,11 @@
                         <div class="form-group">
                             @if(@$rsVid->video)
                                 {{-- <img class="thumb-menu-big" src="{{ @$rsVid->foto }}" alt="{{ @$rsVid->title }}"> --}}
-                                <video class="thumb-menu-big" src="{{@rsVid->video}}" alt="{{@rsVid->title}}"></video>
+                                <video class="thumb-menu-big" src="{{ @$rsVid->video }}" alt="{{ @$rsVid->title }}"></video>
                             @else
                                 <img class="thumb-menu-big" src="{{ asset('back/images/No_Image.jpg') }}" alt="{{ @$rsVid->title }}">
                             @endif
+                            <input type="hidden" name="id_vid" value="{{ @$rsVid->id  }}">
                             <input type="file" name="video" id="video"  >
                             <input type="hidden" name="old_video" value="{{ @$rsVid->video }}">
                             @error('video')

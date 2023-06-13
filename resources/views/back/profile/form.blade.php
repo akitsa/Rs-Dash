@@ -14,7 +14,8 @@
                     
                     <div class="form-group">
                         <label for="nm_perusahaan">Nama Perusahaan</label>
-                        <input type="text" class="form-control @error('title') is-invalid @enderror" name="nm_perusahaan" id="nm_perusahaan" placeholder="pt $" value="{{ @$rsNews->nm_perusahaan }}">
+                        <input type="hidden" name="id_per" value="{{$rsPer->id}}">
+                        <input type="text" class="form-control @error('title') is-invalid @enderror" name="nm_perusahaan" id="nm_perusahaan" placeholder="pt $" value="{{ @$rsPer->nm_perusahaan }}">
                         @error('nm_perusahaan')
                             <div id="nm_perusahaan" class="invalid-feedback">
                                 {{ $message }}
@@ -24,7 +25,7 @@
 
                     <div class="form-group">
                         <label for="alamat">Alamat</label>
-                        <input type="text" class="form-control @error('title') is-invalid @enderror" name="alamat" id="alamat" placeholder="jl jl" value="{{ @$rsNews->alamat }}">
+                        <input type="text" class="form-control @error('alamat') is-invalid @enderror" name="alamat" id="alamat" placeholder="jl jl" value="{{ @$rsPer->alamat }}">
                         @error('alamat')
                             <div id="alamat" class="invalid-feedback">
                                 {{ $message }}
@@ -34,7 +35,7 @@
 
                     <div class="form-group">
                         <label for="telp">telp</label>
-                        <input type="number" class="form-control @error('title') is-invalid @enderror" name="telp" id="telp" placeholder="08212" value="{{ @$rsNews->telp }}">
+                        <input type="number" class="form-control @error('telp') is-invalid @enderror" name="telp" id="telp" placeholder="08212" value="{{ @$rsPer->telp }}">
                         @error('telp')
                             <div id="telp" class="invalid-feedback">
                                 {{ $message }}
@@ -44,7 +45,7 @@
 
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="text" class="form-control @error('title') is-invalid @enderror" name="email" id="email" placeholder="sadboi@github.com" value="{{ @$rsNews->email }}">
+                        <input type="text" class="form-control @error('email') is-invalid @enderror" name="email" id="email" placeholder="sadboi@github.com" value="{{ @$rsPer->email }}">
                         @error('email')
                             <div id="email" class="invalid-feedback">
                                 {{ $message }}

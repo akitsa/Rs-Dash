@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\back;
 
+use PDOException;
 use App\Models\back\profile;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -19,7 +20,7 @@ class profileCtrl extends Controller
     function form (Request $req) {
         $data = [
             "title" => "form profile",
-            "rsPer" => profile::where("id",$req->id_Per)->first()
+            "rsPer" => profile::where("id",$req->id_per)->first()
         ];
         return view ('back.profile.form',$data);
 
@@ -28,7 +29,7 @@ class profileCtrl extends Controller
     function save (Request $req) {
          //dd($req->all());
         $req->validate(
-            [
+                [
             "nm_perusahaan" => "required",
             "alamat" => "required",
             "telp" => "required | numeric",
@@ -62,7 +63,7 @@ class profileCtrl extends Controller
                 "text" => "Data Berhasil Disimpan !"
                 ];
 
-        }catch(Exception $e){
+        }catch(PDOException $e){
             $notif = [
                 "type" => "success",
                 "text" => "Data Gagal Disimpan !".$e->getMessage()
@@ -83,7 +84,7 @@ class profileCtrl extends Controller
                 "type" => "success",
                 "text" => "Data Berhasil Disimpan !"
             ];
-        }catch(Exception $e){   
+        }catch(PDOException $e){   
             $notif = [
                 "type" => "success",
                 "text" => "Data Gagal Disimpan !".$e->getMessage()

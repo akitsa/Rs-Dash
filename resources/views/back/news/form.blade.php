@@ -13,6 +13,7 @@
 
                     <div class="form-group">
                         <label for="title">Judul Berita</label>
+                        <input type="hidden" name="id_news" value="{{@$rsNews->id}}">
                         <input type="text" class="form-control @error('title') is-invalid @enderror" name="title" id="title" placeholder="Judul Berita" value="{{ @$rsNews->title }}">
                         @error('title')
                             <div id="title" class="invalid-feedback">
@@ -57,17 +58,7 @@
         <div class="col-md-4">
             <div class="card">
                 <div class="card-body">
-                    {{-- <div class="form-group">
-                        <label for="id">Kode Berita</label>
-                        <input type="hidden" name="id" value="{{ @$rsNews->id }}">
-                        <input type="text" class="form-control @error('id') is-invalid @enderror" name="news_kd" id="news_kd" placeholder="Kode Berita" value="{{ @$rsNews->id }}">
-                        @error('id')
-                            <div id="id" class="invalid-feedback">
-                                {{ $message }}
-                            </div>
-                        @enderror
-                    </div> --}}
-
+                    
                     <div class="form-group">
                         @if(@$rsNews->foto)
                             <img class="thumb-menu-big" src="{{ @$rsNews->foto }}" alt="{{ @$rsNews->title}}">
@@ -91,8 +82,8 @@
                                 <option value="{{ $rsKat->id }}" {{ @$rsNews->id_kat_news==$rsKat->id ? "selected" : "" }}>{{ $rsKat->nm_kat }}</option>
                             @endforeach
                         </select>
-                        @error('tb_kat_news_id')
-                            <div id="tb_kat_news_id" class="invalid-feedback">
+                        @error('id_kat_news')
+                            <div id="id_kat_news" class="invalid-feedback">
                                 {{ $message }}
                             </div>
                         @enderror
@@ -102,7 +93,7 @@
                         <label for="status">Status</label>
                         <select class="form-control @error('status') is-invalid @enderror" name="status" id="status">
                             <option value="A" {{ @$rsNews->status=="A" ? "selected" : "" }}>Active</option>
-                            <option value="NA" {{ @$rsNews->status=="Na" ? "selected" : "" }}>Non Active</option>
+                            <option value="NA" {{ @$rsNews->status=="Na" ? "selected" : "" }}>Non Active</option> 
                         </select>
                         @error('status')
                             <div id="status" class="invalid-feedback">
