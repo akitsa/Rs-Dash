@@ -1,0 +1,96 @@
+/*  banner */
+.overlay {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.banner-area {
+    width: 100%;
+    height: 85vh;
+    background: url("../img/bg-rsi.jpg") center;
+    background-size: cover;
+    margin-bottom: -100px;
+}
+
+@media (max-width: 767.98px) {
+    .banner-area .fullscreen {
+        height: 700px !important;
+    }
+}
+
+/* .banner-area .overlay {
+    background: #000;
+    opacity: 0.5;
+} */
+
+.banner-area .primary-btn {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.sample-text-area {
+    background: #fff;
+    padding: 100px 0 70px 0;
+}
+.text-heading {
+    margin-bottom: 30px;
+    font-size: 24px;
+}
+
+.section-top-border {
+    padding: 50px 0;
+    border-top: 1px dotted #eee;
+}
+.line {
+    background-color: #f44336;
+    width: 100%;
+    height: 3px;
+    margin-top: -15px;
+    margin-bottom: 10px;
+}
+.span {
+    font-weight: bold;
+}
+.ordered-list {
+    margin-left: 30px;
+}
+
+.ordered-list li {
+    list-style-type: decimal-leading-zero;
+    color: #fab700;
+    font-weight: 500;
+    line-height: 1.82em !important;
+}
+
+.ordered-list li span {
+    font-weight: 300;
+    color: #777777;
+}
+
+.ordered-list-alpha li {
+    margin-left: 30px;
+    list-style-type: lower-alpha;
+    color: #fab700;
+    font-weight: 500;
+    line-height: 1.82em !important;
+}
+
+.ordered-list-alpha li span {
+    font-weight: 300;
+    color: #777777;
+}
+
+.ordered-list-roman li {
+    margin-left: 30px;
+    list-style-type: lower-roman;
+    color: #fab700;
+    font-weight: 500;
+    line-height: 1.82em !important;
+}
+
+.ordered-list-roman li span {
+    font-weight: 300;
+    color: #777777;
+}

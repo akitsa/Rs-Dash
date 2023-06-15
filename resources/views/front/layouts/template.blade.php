@@ -15,7 +15,7 @@
 <body>
 
   @include('front.layouts.header')
-      {{-- @include('front.layouts.navbar') --}}
+      @include('front.layouts.navbar')
 
       <!-- <a href="#appointment" class="appointment-btn scrollto"><span class="d-none d-md-inline">Make an</span> Appointment</a> -->
 
@@ -23,7 +23,8 @@
   </header><!-- End Header -->
 
   <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex align-items-center">
+  <section id="home" class="banner-area relative">
+    <div class="overlay overlay-bg"></div>
     <div class="container">
       {{-- <h1>RUMAH SAKIT ISLAM SITI AISYAH MADIUN</h1>
       <h2>Jl.Mayjend Sungkono No.38 40 Madiun</h2>
@@ -37,7 +38,7 @@
 
   <main id="main">
     <!-- ======= Why Us Section ======= -->
-    <section id="services" class="services">
+    <section  class="sample-text-area">
       <div class="container">
         @yield('content')
       </div>
