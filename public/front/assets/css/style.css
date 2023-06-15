@@ -196,7 +196,7 @@ h2 {
 }
 
 #header .logo {
-    font-size: 30px;
+    font-size: 15px;
     margin: 0;
     padding: 0;
     line-height: 1;
@@ -212,7 +212,7 @@ h2 {
 }
 
 #header .logo img {
-    max-height: 40px;
+    max-height: 30px;
 }
 
 /**

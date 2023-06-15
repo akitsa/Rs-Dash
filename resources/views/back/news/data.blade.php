@@ -25,7 +25,7 @@
                 <tr>
                     <th>photo</th>
                     <th>ID</th>
-                    <th>kategori news</th>
+                    {{-- <th>kategori news</th> --}}
                     <th>title</th>
                     <th>tooltip</th>
                     <th>url</th>
@@ -46,7 +46,7 @@
                             @endif
                         </td>
                         <td>{{ $rsNews->id  }}</td>
-                        <td>{{ $rsNews->id_kat_news }}</td>
+                        {{-- <td>{{ $rsNews->id_kat_news }}</td> --}}
                         <td>{{ $rsNews->title   }}</td>
                         <td>{{ $rsNews->tooltip   }}</td>
                         <td>{{ $rsNews->url  }}</td>

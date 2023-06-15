@@ -152,11 +152,12 @@
           <div
             class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
             <h3>SAMBUTAN DIREKTUR RUMAH SAKIT SITI AISYAH MADIUN</h3>
-            <p>Esse voluptas cumque vel exercitationem. Reiciendis est hic accusamus. Non ipsam et sed minima temporibus
-              laudantium. Soluta voluptate sed facere corporis dolores excepturi. Libero laboriosam sint et id nulla
-              tenetur. Suscipit aut voluptate.</p>
+            <p>Assalamu’alaikum Wr. Wb.
+              Puji Syukur kita panjatkan ke hadirat Allah SWT, atas rahmat dan karunia-Nya, sholawat dan salam senantiasa tercurah kepada Rasulullah SAW.
+              Saya sebagai Direktur RS Islam Surabaya mengharapkan Website ini dapat menjadi jembatan penghubung antar stakeholder. Dan dapat memberikan informasi yang diperlukan oleh masyarakat.
+              .</p>
 
-            <div class="icon-box">
+            {{-- <div class="icon-box">
               <div class="icon"><i class="bx bx-fingerprint"></i></div>
               <h4 class="title"><a href="">Lorem Ipsum</a></h4>
               <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint
@@ -175,7 +176,7 @@
               <h4 class="title"><a href="">Dine Pad</a></h4>
               <p class="description">Explicabo est voluptatum asperiores consequatur magnam. Et veritatis odit. Sunt aut
                 deserunt minus aut eligendi omnis</p>
-            </div>
+            </div> --}}
 
           </div>
         </div>
@@ -536,7 +537,7 @@
     </section><!-- End Doctors Section -->
 
     <!-- ======= Frequently Asked Questions Section ======= -->
-    <section id="faq" class="faq section-bg">
+    {{-- <section id="faq" class="faq section-bg">
       <div class="container">
 
         <div class="section-title">
@@ -617,7 +618,7 @@
         </div>
 
       </div>
-    </section><!-- End Frequently Asked Questions Section -->
+    </section><!-- End Frequently Asked Questions Section --> --}}
 
     <!-- ======= Testimonials Section ======= -->
     <section id="testimonials" class="testimonials">
@@ -752,7 +753,7 @@
               <div class="email">
                 <i class="bi bi-envelope"></i>
                 <h4>Email:</h4>
-                <p>rsimadiun@example.com</p>
+                <p>rsimadiun@yahoo.com</p>
               </div>
 
               <div class="phone">

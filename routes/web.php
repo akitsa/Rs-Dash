@@ -31,7 +31,6 @@ use App\Http\Controllers\front\NewsPostController;
 // front end area 
 Route::get('/',[HomePostController::class,'index']);
 
-
 // berita
 Route::get('berita',[NewsPostController::class,'index']);
 

@@ -34,6 +34,7 @@ class newsCtrl extends Controller
     function save (Request $req) {
         // create or update
         //dd($req->all());
+        
         $req->validate(
             [
                 //"news_kd" => "required|max:5",
