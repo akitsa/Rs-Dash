@@ -33,6 +33,7 @@ Route::get('/',[HomePostController::class,'index']);
 
 // berita
 Route::get('berita',[NewsPostController::class,'index']);
+Route::get('berita/{id}',[NewsPostController::class,'single']);
 
 // layanan
 Route::get('ugd',[LayananPostController::class,'index1']);

@@ -16,7 +16,7 @@
           <img style="width: 100px; height:auto ;" src="{{$rsNews->foto}}" class="card-img-top" alt="...">
           <div class="card-body">
             <p class="card-text">{{ $rsNews->title  }}</p>
-            <a href="{{url('berita/{id}')}}">
+            <a href="{{url('berita/'.$rsNews->id)}}">
               <button class="btn btn-primary">  Lanjutkan Membaca</button>
             </a>
            

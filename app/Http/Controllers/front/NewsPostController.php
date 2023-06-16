@@ -17,7 +17,10 @@ class NewsPostController extends Controller
         return view('front/berita/berita',$data);
     }
 
-    public function show (Request $id){
-
+    public function single (Request $request){
+        $data = [
+            "News" => news::where("id",$request->id)->first()
+        ];
+        return view ('front/berita/post',$data);
     }
 }
