@@ -42,17 +42,23 @@
                     <h4 class="mb-20">Klinik Non Spesialis</h4>
                     <div class="line"></div>
                     <ul class="ordered-list">
-                        <li><span class="span">Klinik Akupunktur<span></li>
-                        <li><span>Klinik DOT<span></li>
-                        <li><span>Klinik Fisioterapi<span></li>
-                        <li><span>Klinik Geriartri<span></li>
+                        <li><span class="span">Klinik Penyakit Dalam<span></li>
+                        <li><span>Klinik Jantung<span></li>
+                        <li><span>Klinik Bedah<span></li>
+                        <li><span>Klinik Bedah Saraf<span></li>
+                        <li><span>Klinik Orthopedi<span></li>
+                        <li><span>Klinik Urologi<span></li>
+                        <li><span>Klinik Saraf<span></li>
+                        <li><span>Klinik Mata<span></li>
+                        <li><span>Klinik Anak<span></li>
+                        <li><span>Klinik Obsgin<span></li>
+                        <li><span>Klinik Jiwa<span></li>
                         <li><span>Klinik Gigi<span></li>
-                        <li><span>Klinik KIA<span></li>
-                        <li><span>Klinik Konsultasi Gizi<span></li>
+                        <li><span>Klinik Paru<span></li>
+                        <li><span>Klinik TB<span></li>
+                        <li><span>Klinik THT<span></li>
+                        <li><span>Klinik Rehabilitasi Medik<span></li>
                         <li><span>Klinik Umum<span></li>
-                        <li><span>Klinik Umum Sore<span></li>
-                        <li><span>Klinik VCT<span></li>
-                        <li><span>Klinik Woundcare<span></li>
                     </ul>
                 </div>
             </div>
