@@ -12,6 +12,8 @@ use App\Http\Controllers\back\KatNewsCtrl;
 use App\Http\Controllers\back\profileCtrl;
 use App\Http\Controllers\back\galeri_ImgCtrl;
 use App\Http\Controllers\back\galeri_vidCtrl;
+use App\Http\Controllers\back\LayananController;
+use App\Http\Controllers\back\PagesController;
 use App\Http\Controllers\front\HomePostController;
 use App\Http\Controllers\front\LayananPostController;
 use App\Http\Controllers\front\NewsPostController;
@@ -20,7 +22,7 @@ use App\Http\Controllers\front\NewsPostController;
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
-|
+| 
 | Here is where you can register web routes for your application. These
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
@@ -33,7 +35,7 @@ Route::get('/',[HomePostController::class,'index']);
 
 // berita
 Route::get('berita',[NewsPostController::class,'index']);
-Route::get('berita/{id}',[NewsPostController::class,'single']);
+Route::get('berita/{slug}.html',[NewsPostController::class,'single'])->name("single_news");
 
 // layanan
 Route::get('ugd',[LayananPostController::class,'index1']);
@@ -47,8 +49,8 @@ Route::group(["middleware"=>"auth"],function(){
 Route::get('/admin',[DashboardController::class,'index']);
 
 
-// page
-        // kategori news
+
+  // kategori news
 Route::group(["middleware"=>"RoleAdmin"],function(){   
       Route::get("kategorinews",[KatNewsCtrl::class,'index']);
       Route::get("kategorinews/form/{id_kat?}",[KatNewsCtrl::class,'create']);
@@ -87,6 +89,23 @@ route::get("profile/form/{id_per?}",[profileCtrl::class,'form']);
 route::get("profile/delete/{id_per}",[profileCtrl::class,'delete']);
 route::post("profile/save",[profileCtrl::class,'save']);
 });
+
+// layanan
+route::group(["middleware"=>"RoleAdmin"],function(){
+route::get("layanan",[LayananController::class,'index']);
+route::get("layanan/form/{id_lay?}",[LayananController::class,'form']);
+route::get("layanan/delete/{id_lay}",[LayananController::class,'delete']);
+route::post("layanan/save",[LayananController::class,'save']);
+});
+
+// pages 
+route::group(["middleware"=>"RoleAdmin"],function(){
+  route::get("pages",[PagesController::class,'index']);
+  route::get("pages/form/{id_pag?}",[PagesController::class,'form']);
+  route::get("pages/delete/{id_pag}",[PagesController::class,'delete']);
+  route::post("pages/save",[PagesController::class,'save']);
+  });
+
 
   // Auth Logout hanya bisa di akses jika sudah login
   Route::get("auth/logout",[authCtrl::class,"logout"])->name("signout"); // Dengan nama route   

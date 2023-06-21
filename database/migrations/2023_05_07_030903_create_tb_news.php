@@ -17,10 +17,9 @@ return new class extends Migration
             $table->id();
             $table->string("id_kat_news",5);
             $table->string('title',50);
-            $table->string('tooltip',50);
-            $table->string('url',50);
+            $table->string('slug')->unique();
             $table->string('foto')->nullable();
-            $table->string('desc')->nullable();
+            $table->longText('konten')->nullable();
             $table->enum("status",['A',"Na"]);
             $table->timestamps();
             $table->index(["id_kat_news"]);

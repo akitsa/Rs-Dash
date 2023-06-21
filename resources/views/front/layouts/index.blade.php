@@ -3,6 +3,20 @@
 @section('title',$title)
 @section('page-title'$title)
 
+@section('hero')
+      <!-- ======= Hero Section ======= -->
+  <section id="home" class="banner-area relative">
+    <div class="overlay overlay-bg"></div>
+    <div class="container">
+      {{-- <h1>RUMAH SAKIT ISLAM SITI AISYAH MADIUN</h1>
+      <h2>Jl.Mayjend Sungkono No.38 40 Madiun</h2>
+      <h2>Telp : (0351) 464822, 462212 Fax. 0351 464009</h2>
+      <h2>Email : rsimadiun@yahoo.com</h2>
+      <a href="#about" class="btn-get-started scrollto"></a> --}}
+    </div>
+  </section><!-- End Hero -->
+@endsection
+
 @section('content')
 
 <!-- ======= Hero Section ======= -->

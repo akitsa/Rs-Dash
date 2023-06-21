@@ -9,7 +9,7 @@
     <div class="row">
         <div class="col12">
             <div class="row">
-               <p>  {!! htmlspecialchars_decode( @$News->desc) !!}</p>
+               <p>  {!! htmlspecialchars_decode( @$News->konten) !!}</p>
             </div>
         </div>
     </div>

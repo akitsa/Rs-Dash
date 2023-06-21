@@ -39,7 +39,7 @@ class profileCtrl extends Controller
                 "nm_perusahaan.required" => "Nama Harus di isi",
                 "alamat.required"        => "alamat harus di isi",
                 "telp.required"          => "no telp harus di isi",
-                "telp.numeric" => "no telp harus angka",
+                "telp.numeric"           => "no telp harus angka",
                 "email.required"         => "email harus di isi",
             ]
         );

@@ -13,13 +13,13 @@ class NewsPostController extends Controller
         $data = [
             "dtKat" => kategorinews::all(),
             "dtNews" => news::all()
-        ];
+        ]; 
         return view('front/berita/berita',$data);
     }
 
     public function single (Request $request){
         $data = [
-            "News" => news::where("id",$request->id)->first()
+            "News" => news::where("slug",$request->slug)->first()
         ];
         return view ('front/berita/post',$data);
     }

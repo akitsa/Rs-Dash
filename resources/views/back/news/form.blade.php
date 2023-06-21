@@ -23,30 +23,22 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="tooltip">Tooltip</label>
-                        <input type="text" class="form-control @error('tooltip') is-invalid @enderror" name="tooltip" id="tooltip" placeholder="Tooltip" value="{{ @$rsNews->tooltip }}">
-                        @error('tooltip')
-                            <div id="tooltip" class="invalid-feedback">
+                        <p><strong>URL</strong> : <a href="{{ @$rsNews->slug ? route("single_news",["slug"=>$rsNews->slug]) : "" }}">{{ @$rsNews->slug ? route("single_news",["slug"=>@$rsNews->slug]) : "" }}</a></p>
+                        <input type="hidden" class="form-control @error('slug') is-invalid @enderror" name="slug" id="slug" placeholder="slug" value="{{ @$rsNews->slug }}">
+                        @error('slug')
+                            <div id="slug" class="invalid-feedback">
                                 {{ $message }}
                             </div>
                         @enderror
                     </div>
 
-                    <div class="form-group">
-                        <label for="url">Url</label>
-                        <input type="text" class="form-control @error('url') is-invalid @enderror" name="url" id="url" placeholder="Masukan Link Disini" value="{{ @$rsNews->url }}">
-                        @error('url')
-                            <div id="url" class="invalid-feedback">
-                                {{ $message }}
-                            </div>
-                        @enderror
-                    </div>
+                  
 
                     <div class="form-group">
-                        <label for="desc">Content</label>
-                        <textarea id="editor" type="text" class="form-control @error('desc') is-invalid @enderror" name="desc" id="desc" placeholder="Deskripsi">{{ @$rsNews->desc }}</textarea>
-                        @error('desc')
-                            <div id="desc" class="invalid-feedback">
+                        <label for="konten"></label>
+                        <textarea id="editor" type="text" class="form-control @error('konten') is-invalid @enderror" name="konten" id="konten" placeholder="Deskripsi">{{ @$rsNews->konten }}</textarea>
+                        @error('konten')
+                            <div id="konten" class="invalid-feedback">
                                 {{ $message }}
                             </div>
                         @enderror
@@ -77,7 +69,7 @@
                     <div class="form-group">
                         <label for="id_kat_news">Kategori news</label>
                         <select class="form-control @error('id_kat_news') is-invalid @enderror" name="id_kat_news" id="id_kat_news">
-                            <option value="">- Kategori Berita -</option>
+                            <option value=""> - Kategori Berita -</option>
                             @foreach ($dtKat as $rsKat)
                                 <option value="{{ $rsKat->id }}" {{ @$rsNews->id_kat_news==$rsKat->id ? "selected" : "" }}>{{ $rsKat->nm_kat }}</option>
                             @endforeach
@@ -112,4 +104,5 @@
     </div>
 
   </form>
+  
 @endsection

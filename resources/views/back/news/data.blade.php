@@ -27,9 +27,7 @@
                     <th>ID</th>
                     {{-- <th>kategori news</th> --}}
                     <th>title</th>
-                    <th>tooltip</th>
                     <th>url</th>
-                    <th>desc</th>
                     <th>status</th>
                     <th>Action</th>
                 </tr>
@@ -48,9 +46,8 @@
                         <td>{{ $rsNews->id  }}</td>
                         {{-- <td>{{ $rsNews->id_kat_news }}</td> --}}
                         <td>{{ $rsNews->title   }}</td>
-                        <td>{{ $rsNews->tooltip   }}</td>
-                        <td>{{ $rsNews->url  }}</td>
-                        <td>{{ $rsNews ->desc }}</td>
+                        <td>{{ $rsNews->slug  }}</td>
+                        
                         <td>{{$rsNews->status}}</td>
                        <td>
                             <a href="{{ url("news/form/".$rsNews->id)}}"><i class="bi bi-pencil p-2" ></i></a>

@@ -37,7 +37,7 @@
                 with font-awesome or any other icon font library -->
           <li class="nav-item ">
             <a href="#" class="nav-link ">
-              <i class="nav-icon bi bi-people-fill "></i>
+              <i class="bi bi-newspaper"></i>
               <p>
                 News
                 <i class="right fas fa-angle-left"></i>
@@ -49,6 +49,12 @@
                   <i class="far fa-circle nav-icon"></i>
                   <p>Data List</p>
                 </a>
+              </li> 
+              <li class="nav-item">
+                <a href="{{  url('kategorinews')   }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Kategori</p>
+                </a>
               </li>
               <li class="nav-item">
                 <a href="{{ url('news/form')}}" class="nav-link">
@@ -58,30 +64,77 @@
               </li>
             </ul>
           </li>
-              <li class="nav-item ">
+        
+          <li class="nav-item ">
             <a href="#" class="nav-link ">
-              <i class="nav-icon bi bi-book"></i>
-              <p>
-                Kategori News
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="{{  url('kategorinews')   }}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Data List</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{  url('kategorinews/form')   }}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Add New</p>
-                </a>
-              </li>
-            </ul>
-          </li>
+              <i class="bi bi-hand-thumbs-up"></i>
+            <p>
+              Layanan
+              <i class="right fas fa-angle-left"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href="{{   url('layanan')   }}" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Data List</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="{{  url('layanan/form')  }}" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Add New</p>
+              </a>
+            </li>
+          </ul>
+        </li>
 
+        <li class="nav-item ">
+          <a href="#" class="nav-link ">
+            <i class="bi bi-file-earmark-medical-fill"></i>
+          <p>
+            Pages
+            <i class="right fas fa-angle-left"></i>
+          </p>
+        </a>
+        <ul class="nav nav-treeview">
+          <li class="nav-item">
+            <a href="{{   url('pages')   }}" class="nav-link">
+              <i class="far fa-circle nav-icon"></i>
+              <p>Data List</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{  url('pages/form')  }}" class="nav-link">
+              <i class="far fa-circle nav-icon"></i>
+              <p>Add New</p>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class="nav-item ">
+        <a href="#" class="nav-link ">
+          <i class="bi bi-envelope-at"></i>
+        <p>
+          Profil
+          <i class="right fas fa-angle-left"></i>
+        </p>
+      </a>
+      <ul class="nav nav-treeview">
+        <li class="nav-item">
+          <a href="{{   url('profile')   }}" class="nav-link">
+            <i class="far fa-circle nav-icon"></i>
+            <p>Data List</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="{{  url('profile/form')  }}" class="nav-link">
+            <i class="far fa-circle nav-icon"></i>
+            <p>Add New</p>
+          </a>
+        </li>
+      </ul>
+      </li>
             <li class="nav-item ">
             <a href="#" class="nav-link ">
               <i class="nav-icon bi bi-book-half"></i>
@@ -129,32 +182,6 @@
               </li>
             </ul>
           </li>
-
-              <li class="nav-item ">
-              <a href="#" class="nav-link ">
-              <i class="nav-icon bi bi-tablet-landscape"></i>
-              <p>
-                profil
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="{{   url('profile')   }}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Data List</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{  url('profile/form')  }}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Add New</p>
-                </a>
-              </li>
-            </ul>
-          </li>
-            
-
             <li class="nav-item">
                 <a href="{{route('signout')}}" class="nav-link text-danger">
                   <i class="bi bi-arrow-bar-right nav-icon"></i>

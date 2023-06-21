@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers\back;
 
+
 use PDOException;
 use App\Models\back\news;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Models\back\kategorinews;
 use App\Http\Controllers\Controller;
+use Cviebrock\EloquentSluggable\Services\SlugService;
+
 
 class newsCtrl extends Controller
 {
@@ -34,26 +37,23 @@ class newsCtrl extends Controller
     function save (Request $req) {
         // create or update
         //dd($req->all());
-        
+
         $req->validate(
             [
                 //"news_kd" => "required|max:5",
                 "id_kat_news" => "required",
                 "title" => "required",
-                "tooltip" => "required",
-                "url" => "required",
-                "desc" => "required",
+                // "tooltip" => "required",
+                // "url" => "required",
+                "konten" => "required",
                 "status" => "required",
                 "foto"   => "mimes:jpg,jpeg,png|max:3000"
             ],
             [
-                //"news_kd.required" => "kode news harus di isi",
-                //"news_kd.max" => "maximal 5 digit",
+               
                 "id_kat_news.required" =>  "kategori harus di pilih",
                 "title.required" => "judul harus di isi",
-                "tooltip.required" => "tooltip harus di isi",
-                "url.required" => "link harus di isi",
-                "desc.required" => "deskripsi harus di isi",
+                "konten.required" => "konten harus di isi",
                 "status.required" => "status harus di pilih",
                 "foto.mimes" => "Foto harus .jpg, .jpeg atau png !",
                 "foto.max" => "foto maximal 3000mb",
@@ -81,10 +81,10 @@ class newsCtrl extends Controller
                 [
                     //"news_kd" => $req->input("news_kd"),
                     "id_kat_news" =>$req->input("id_kat_news"),
-                    "title" =>$req->input("title"),
-                    "tooltip" =>Str::slug($req->title,'-'),
-                    "url" =>$req->input("url"),
-                    "desc" =>$req->input("desc"),
+                    "title" => $req->input("title"),
+                    // "slug" => $req->input("slug") ? (Str::contains($req->input("slug")," ") ? SlugService::createSlug(news::class,"slug",$req->input("slug")) : $req->input("slug")) : SlugService::createSlug(news::class,"slug",$req->input("title")),
+                    "slug" => $req->input("slug") ? $req->input("slug") : SlugService::createSlug(news::class,"slug",$req->input("title")),
+                    "konten" =>$req->input("konten"),
                     "status"=>$req->input("status"),
                     "foto"=>$foto,
                 ]

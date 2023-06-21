@@ -13,13 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('tb_pages', function (Blueprint $table) {
+        Schema::create('tb_layanan', function (Blueprint $table) {
             $table->id();
             $table->string('title');
             $table->string('slug')->unique();
             $table->string('content');
-            $table->enum("status",['A','Na']);                                                                                      
-            $table->timestamps();             
+            $table->enum("status",['A','Na']);
+            $table->timestamps();
         });
     }
 
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tb_pages');
+        Schema::dropIfExists('tb_layanan');
     }
 };

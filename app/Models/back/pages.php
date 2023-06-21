@@ -2,24 +2,22 @@
 
 namespace App\Models\back;
 
-
-use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentSluggable\Sluggable;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class news extends Model
+class pages extends Model
 {
-   use sluggable;
-    
-    protected $table = "tb_news";
-    protected $guarded = ['id'];
+    use sluggable;
+
+    protected $table = "tb_pages";
+    protected $guarded = ["id"];
 
     public function sluggable(): array
     {
         return [
             'slug' => [
-                'source' => ['title','slug'],
-                'firstUniqueSuffix' => 1
+                'source' => 'title'
             ]
         ];
     } 
