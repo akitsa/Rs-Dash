@@ -1,6 +1,6 @@
 <nav id="navbar" class="navbar order-last order-lg-0">
     <ul>
-        <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+        <li><a class="nav-link scrollto active" href="{{'/'}}">Home</a></li>
         <li><a class="nav-link scrollto" href="{{('profil')}}">Profil</a></li>
         <li><a class="nav-link scrollto" href="{{('berita')}}">Berita</a></li>
 
@@ -9,9 +9,9 @@
             <ul>
                 <li><a href="{{ ('ugd') }}">IGD 24 Jam</a></li>
                 <li><a href="{{   ('rawatjalan') }}">Rawat Jalan</a></li>
-                <li><a href="#">Rawat Inap</a></li>
-                <li><a href="#">Penunjang Medis</a></li>
-                <li><a href="#">Fasilitas</a></li>
+                <li><a href="{{('rawatinap')}}">Rawat Inap</a></li>
+                {{-- <li><a href="#">Penunjang Medis</a></li>
+                <li><a href="#">Fasilitas</a></li> --}}
             </ul>
         </li>
         {{-- <li><a class="nav-link scrollto" href="#services">Fasilitas</a></li> --}}

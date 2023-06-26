@@ -80,9 +80,9 @@
 
         <div class="section-title">
           <h2>Fasilitas dan Layanan</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
+          {{-- <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
             consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit
-            in iste officiis commodi quidem hic quas.</p>
+            in iste officiis commodi quidem hic quas.</p> --}}
         </div>
 
         <div class="row">
@@ -267,10 +267,10 @@
       <div class="container">
 
         <div class="section-title">
-          <h2>Daftar Online</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
+          <h3>Pendaftaran Online</h3>
+          {{-- <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
             consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit
-            in iste officiis commodi quidem hic quas.</p>
+            in iste officiis commodi quidem hic quas.</p> --}}
         </div>
 
         <form action="forms/appointment.php" method="post" role="form" class="php-email-form">
@@ -333,7 +333,7 @@
     </section><!-- End Appointment Section -->
 
     <!-- ======= Departments Section ======= -->
-    <section id="departments" class="departments">
+    {{-- <section id="departments" class="departments">
       <div class="container">
 
         <div class="section-title">
@@ -444,17 +444,15 @@
         </div>
 
       </div>
-    </section><!-- End Departments Section -->
+    </section><!-- End Departments Section --> --}}
 
     <!-- ======= Doctors Section ======= -->
     <section id="doctors" class="doctors">
       <div class="container">
 
         <div class="section-title">
-          <h2>Doctors</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
-            consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit
-            in iste officiis commodi quidem hic quas.</p>
+          <h2>Dokter</h2>
+          <p>Dokter Kami Siap Melayani</p>
         </div>
 
         <div class="row">
@@ -866,10 +864,9 @@
         </div>
       </div>
       <div class="social-links text-center text-md-right pt-3 pt-md-0">
-        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-        <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+        <a href="https://twitter.com/rsimadiun/" class="twitter"><i class="bx bxl-twitter"></i></a>
+        <a href="https://www.facebook.com/rsi.madiun/" class="facebook"><i class="bx bxl-facebook"></i></a>
+        <a href="https://www.instagram.com/rsimadiun/" class="instagram"><i class="bx bxl-instagram"></i></a>
         <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
       </div>
     </div>

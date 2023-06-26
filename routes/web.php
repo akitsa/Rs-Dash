@@ -17,6 +17,7 @@ use App\Http\Controllers\back\PagesController;
 use App\Http\Controllers\front\HomePostController;
 use App\Http\Controllers\front\LayananPostController;
 use App\Http\Controllers\front\NewsPostController;
+use App\Http\Controllers\front\ProfilController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,7 +44,7 @@ Route::get('rawatjalan',[LayananPostController::class,'index2']);
 Route::get('rawatinap',[LayananPostController::class,'index3']);
 
 // profil
-//Route::get('profil',[])
+Route::get('profil',[ProfilController::class,'index']);
 
 
    // back end area

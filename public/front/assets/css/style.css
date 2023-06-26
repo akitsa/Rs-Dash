@@ -296,8 +296,8 @@ h2 {
 .navbar .active,
 .navbar .active:focus,
 .navbar li:hover > a {
-    color: #85cb33;
-    border-color: #85cb33;
+    color: #015907;
+    border-color: #000;
     text-shadow: none;
 }
 
@@ -489,9 +489,10 @@ h2 {
 --------------------------------------------------------------*/
 #hero {
     width: 100%;
-    height: 90vh;
-    background: url("../img/bg-rsi.jpg") center;
+    height: 80vh;
+    background: url("../../images/BG.jpg") center;
     background-size: cover;
+
     margin-bottom: -100px;
 }
 

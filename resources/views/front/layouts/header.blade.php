@@ -6,11 +6,9 @@
             <i class="bi bi-phone"></i> (0351) 464882
         </div>
         <div class="d-none d-lg-flex social-links align-items-center">
-            <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-            <a href="https://www.youtube.com/rsi" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
-            <a href="">Log in</a>
+            <a href="https://twitter.com/rsimadiun/" class="twitter"><i class="bi bi-twitter"></i></a>
+            <a href="https://www.facebook.com/rsi.madiun/" class="facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.instagram.com/rsimadiun/" class="instagram"><i class="bi bi-instagram"></i></a>
         </div>
     </div>
 </div>
