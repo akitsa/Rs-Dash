@@ -20,9 +20,9 @@ class PagesController extends Controller
     public function form(Request $req) {
         $data = [
             "title" => "form pages",
-            "rsPages" => pages::where("id",$req->idpag)->first()
+            "dtPages" => pages::where("id",$req->id_pag)->first()
         ];
-        return view ('back/pages/data',$data);
+        return view ('back/pages/form',$data);
     }
 
     public function save(Request $req) {

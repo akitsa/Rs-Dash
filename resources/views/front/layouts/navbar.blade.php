@@ -1,7 +1,7 @@
 <nav id="navbar" class="navbar order-last order-lg-0">
     <ul>
         <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-        <li><a class="nav-link scrollto" href="{{('profile')}}">Profil</a></li>
+        <li><a class="nav-link scrollto" href="{{('profil')}}">Profil</a></li>
         <li><a class="nav-link scrollto" href="{{('berita')}}">Berita</a></li>
 
         <li class="dropdown"><a class="nav-link scrollto" href="#"><span>Layanan</span> <i

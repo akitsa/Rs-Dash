@@ -42,6 +42,8 @@ Route::get('ugd',[LayananPostController::class,'index1']);
 Route::get('rawatjalan',[LayananPostController::class,'index2']);
 Route::get('rawatinap',[LayananPostController::class,'index3']);
 
+// profil
+//Route::get('profil',[])
 
 
    // back end area

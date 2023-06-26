@@ -15,8 +15,8 @@ class LayananController extends Controller
         "title" => "data layanan",
         "dtPel" => layanan::all()
     ];  
-    return view ('back/pelayanan/data',$data);
-  }
+        return view ('back/pelayanan/data',$data);
+    }
   
     public function form(Request $req){
         $data = [
